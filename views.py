@@ -35,6 +35,10 @@ def get_json():
         "age": 34
     })
 
+@views.route("/hello")
+def get_hell():
+    return "Hello how are u"
+
 @views.route('/signup', methods=['GET', 'POST'])
 def signup():
     driver = webdriver.Chrome()
