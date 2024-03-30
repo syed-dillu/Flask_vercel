@@ -6,16 +6,20 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
-load_dotenv()
-host = os.getenv("HOST")
-port = os.getenv("PORT")
+# load_dotenv()
+# host = os.getenv("HOST")
+# port = os.getenv("PORT")
 
 views = Blueprint(__name__, "views")
 
 @views.route("/")
 def index():
-    return render_template('index.html', name = "syed", serve = host , listen = port)
+    return render_template('index.html',)
 
+
+@views.route("/hello")
+def hell():
+    return render_template('hello')
 
 @views.route("/param_users/<username>")
 def user_param(username):
